@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "avalanche-opt"
-version = "1.0.0"
+version = "1.2.0"
 authors = [
   { name="Jassim Ibrahim Farooqi" },
   { name="OpenBlade", email="contact@openblade.ai" },
 ]
-description = "Ultra-Low VRAM Matrix-Factorized Optimizer for PyTorch (An OpenBlade Release)"
+description = "Ultra-Low VRAM Matrix-Factorized & Multi-Precision (4-bit, 8-bit, FP16, BF16, FP32) Lossless Optimizer for PyTorch"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
@@ -25,7 +25,13 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/OpenBladeAI/avalanche"
+"Homepage" = "https://github.com/OpenBladeAI/Avalanche"
 "Organization" = "https://github.com/OpenBladeAI"
 "HuggingFace" = "https://huggingface.co/OpenBlade"
-"Repository" = "https://github.com/OpenBladeAI/avalanche"
+"Repository" = "https://github.com/OpenBladeAI/Avalanche"
+
+[tool.setuptools]
+packages = ["avalanche"]
+
+[tool.setuptools.package-dir]
+"avalanche" = "."

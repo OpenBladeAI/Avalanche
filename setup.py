@@ -1,23 +1,24 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
     name="avalanche-opt",
-    version="1.0.0",
+    version="1.2.0",
     author="Jassim Ibrahim Farooqi",
     maintainer="OpenBlade",
-    description="Ultra-Low VRAM Matrix-Factorized Optimizer for PyTorch (An OpenBlade Release)",
+    description="Ultra-Low VRAM Matrix-Factorized & Multi-Precision (4-bit, 8-bit, FP16, BF16, FP32) Lossless Optimizer for PyTorch",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/OpenBladeAI/avalanche",
+    url="https://github.com/OpenBladeAI/Avalanche",
     project_urls={
         "Organization": "https://github.com/OpenBladeAI",
         "HuggingFace": "https://huggingface.co/OpenBlade",
-        "Source": "https://github.com/OpenBladeAI/avalanche",
+        "Source": "https://github.com/OpenBladeAI/Avalanche",
     },
-    packages=find_packages(),
+    packages=["avalanche"],
+    package_dir={"avalanche": "."},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Science/Research",
