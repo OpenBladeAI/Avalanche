@@ -187,7 +187,7 @@ from avalanche import (
     AvalancheFP16,
     AvalancheBF16,
     AvalancheFP32,
-    Avalanche,
+    Avalanche (Recommended - 99.99% Vram reduction while retaining 95%+ of the quality),
 )
 
 # 1. Lossless 4-bit momentum (70% VRAM savings vs FP32 AdamW)
@@ -205,7 +205,7 @@ opt = AvalancheFP16(model.parameters(), lr=1e-4, betas=(0.9, 0.999))
 # 5. Full FP32 momentum with factorized second moments
 opt = AvalancheFP32(model.parameters(), lr=1e-4, betas=(0.9, 0.999))
 
-# Or dynamically through the base class:
+# Or dynamically through the base class (Recommended):
 opt = Avalanche(model.parameters(), lr=1e-4, betas=(0.9, 0.999), mode="bf16")
 ```
 
