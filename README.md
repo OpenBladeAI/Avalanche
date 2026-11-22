@@ -1,5 +1,18 @@
 # ❄️ Avalanche Optimizer
 
+# What it is:
+- Drop in replacement for AdamW/AdaFactor/pytorch optimizers
+
+# What it does:
+- Cuts Optimizer State memory by up to 99.99% (compared to fp32)
+- For example, a 1b model's optimizer states are 8gb alone, which Avalanche drops to just 10-20mb.
+- Allows way larger batch/microbatch and context sizes for pretraining, training or sft. For example an rtx 3060 can train at 1024 ctx batch 16 mb 8 with Avalanche, or batch 8 mb 4 with adamw4bit.
+
+# What it does not do:
+- Currently the quality delta remains unmeasured/unreported. However from tests and training we have found it matches or nearly matches the momentum based optimizers.
+- Does NOT skip, speed up or excel training in any way other than freeing vram/ram for training (bigger batches/context).
+- Does NOT guarantee compatibility or future updates, the optimizer is given as is.
+
 > **Ultra-Low VRAM Matrix-Factorized Optimizer for PyTorch**  
 > **An [OpenBlade](https://github.com/OpenBladeAI) Release** | **Hugging Face:** [huggingface.co/OpenBlade](https://huggingface.co/OpenBlade)  
 > **Author & Lead Researcher:** Jassim Ibrahim Farooqi  
